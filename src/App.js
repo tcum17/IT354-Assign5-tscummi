@@ -28,11 +28,16 @@ export default function App() {
     const num = Math.floor(Math.random() * 10000) + 1;
     const newUser = { num, ...user };
 
+    console.log(user);
+    console.log(user['user']);
+    console.log(user['title']);
+    console.log(user['post']);
+
     axios
       .post('https://jsonplaceholder.typicode.com/posts', {
-        user: user[0],
-        title: user[1],
-        post: user[2],
+        user: user['user'],
+        title: user['title'],
+        post: user['post'],
       })
       .then((response) => {
         console.log('POST Success!');
