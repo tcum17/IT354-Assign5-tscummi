@@ -54,13 +54,17 @@ export default function App() {
     <div class="container">
       <div class="row">
         <BlogForm onAdd={submitPost} />
-        <button onClick={getPosts}>GET Request</button>
+        <div class="col-md-6">
+          <button class="btn btn-success mb-4" onClick={getPosts}>
+            GET Request
+          </button>
+        </div>
+
         {users.length > 0 ? (
           <RemovePost users={users} onDelete={deletePost} />
         ) : (
           'There are currently no posts'
         )}
-        
       </div>
     </div>
   );
